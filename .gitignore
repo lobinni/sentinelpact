@@ -1,0 +1,23 @@
+# dependencies
+node_modules/
+
+# next.js
+.next/
+out/
+next-env.d.ts
+
+# env (keep .env.example tracked)
+.env
+.env.local
+.env*.local
+
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# misc
+*.tsbuildinfo
+.DS_Store
+vercel/

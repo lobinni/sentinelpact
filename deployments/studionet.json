@@ -1,0 +1,42 @@
+{
+  "network": "GenLayer Studionet",
+  "chainId": 61999,
+  "rpc": "https://studio.genlayer.com/api",
+  "explorer": "https://explorer-studio.genlayer.com",
+  "contract": {
+    "name": "SentinelPact",
+    "file": "contracts/sentinelpact.py",
+    "version": "1.1.0-studionet"
+  },
+  "deployment": {
+    "address": "0x81d6c588A9bee60265DEA0d19c38818a77f32bcf",
+    "explorerUrl": "https://explorer-studio.genlayer.com/address/0x81d6c588A9bee60265DEA0d19c38818a77f32bcf",
+    "status": "live"
+  },
+  "verification": {
+    "method": "read-only LATEST_FINAL call to get_stats()",
+    "verifiedFields": [
+      "product = SentinelPact",
+      "version = 1.1.0-studionet",
+      "network = Studionet",
+      "chain_id = 61999",
+      "rpc = https://studio.genlayer.com/api",
+      "admin_controls = false",
+      "accounting_balanced = true",
+      "max_adjudication_rounds = 3",
+      "authoritative_families = GITHUB_ADVISORY,NVD,CISA,PACKAGE_REGISTRY"
+    ],
+    "freshState": {
+      "releases": "0",
+      "warranties": "0",
+      "incidents": "0",
+      "evidence_submissions": "0",
+      "total_deposited_atto": "0"
+    }
+  },
+  "frontend": {
+    "envVar": "NEXT_PUBLIC_SENTINELPACT_CONTRACT",
+    "defaultAddressSource": "src/lib/genlayer/client.ts",
+    "note": "The application falls back to the canonical address when the environment variable is unset. To re-point, update the environment value and rebuild."
+  }
+}

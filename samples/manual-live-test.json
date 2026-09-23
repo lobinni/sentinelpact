@@ -1,0 +1,58 @@
+{
+  "network": {
+    "name": "GenLayer Studionet",
+    "chainId": 61999,
+    "rpc": "https://studio.genlayer.com/api",
+    "explorer": "https://explorer-studio.genlayer.com",
+    "contract": "0x81d6c588A9bee60265DEA0d19c38818a77f32bcf"
+  },
+  "release": {
+    "note": "For a safe negative-path test, replace these placeholders with the exact package and affected version from one real historical advisory. Use a unique version for each practice run because registrations are permanent.",
+    "ecosystem": "npm",
+    "packageName": "replace-with-advisory-package",
+    "version": "replace-with-affected-version-test-001",
+    "releaseDigest": "abababababababababababababababababababababababababababababababab",
+    "metadataUrl": "https://replace-with-public-package-metadata.example/release"
+  },
+  "warranty": {
+    "title": "Historical advisory validation sample",
+    "severityRule": "CVSS 7.0 or higher (High)",
+    "vulnerabilityClass": "replace-with-the-class-stated-by-the-advisory",
+    "exclusions": "dev-only usage, unsupported forks, local admin access required",
+    "premiumBps": 500,
+    "coverageCloseMinutesFromNow": 6,
+    "warrantyEndMinutesFromNow": 120,
+    "incidentWindowSeconds": 1800,
+    "minSources": 2,
+    "minSourceFamilies": 2,
+    "evidenceBondGen": "0.001",
+    "publisherBondGen": "0.05"
+  },
+  "coverage": {
+    "amountGen": "0.02",
+    "expectedPremiumGen": "0.001"
+  },
+  "incident": {
+    "title": "Historical advisory applicability check",
+    "advisoryHint": "Replace with the real advisory identifier"
+  },
+  "evidence": [
+    {
+      "sourceFamily": "NVD",
+      "sourceUrl": "https://nvd.nist.gov/vuln/detail/REPLACE_WITH_REAL_CVE",
+      "claimedFact": "The NVD record discusses the registered package and version. The historical publication predates this warranty."
+    },
+    {
+      "sourceFamily": "GITHUB_ADVISORY",
+      "sourceUrl": "https://github.com/advisories/REPLACE_WITH_MATCHING_REAL_GHSA",
+      "claimedFact": "The GitHub Advisory corroborates the same historical issue and affected version range."
+    }
+  ],
+  "expectedSafeOutcome": {
+    "evidence": "Both sources may become VERIFIED when the package, version, and URLs genuinely match.",
+    "publicationInWindow": false,
+    "verdict": "NOT_AFFECTED or INCONCLUSIVE",
+    "payoutCreated": false,
+    "reason": "Historical disclosures predate the newly opened warranty. A live BREACHED result must never be manufactured for a test."
+  }
+}
