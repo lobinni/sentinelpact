@@ -1,0 +1,95 @@
+{
+  "network": {
+    "name": "GenLayer Studionet",
+    "chainId": 61999,
+    "rpc": "https://studio.genlayer.com/api",
+    "explorer": "https://explorer-studio.genlayer.com",
+    "contract": "0xD61eFb765F260F4D191C359D7a7413fcb59162Bf",
+    "contractVersion": "2.1.0-studionet"
+  },
+  "release": {
+    "note": "For a safe negative-path test, replace these placeholders with the exact package and affected version from one real historical advisory. Use a unique version for each practice run because registrations are permanent.",
+    "ecosystem": "npm",
+    "packageName": "replace-with-advisory-package",
+    "version": "replace-with-affected-version-test-001",
+    "releaseDigest": "abababababababababababababababababababababababababababababababab",
+    "metadataUrl": "https://replace-with-public-package-metadata.example/release"
+  },
+  "warranty": {
+    "title": "Historical advisory validation sample",
+    "severityRule": "CVSS 7.0 or higher (High)",
+    "vulnerabilityClass": "replace-with-the-class-stated-by-the-advisory",
+    "exclusions": "dev-only usage, unsupported forks, local admin access required",
+    "premiumBps": 500,
+    "coverageCloseMinutesFromNow": 6,
+    "warrantyEndMinutesFromNow": 120,
+    "incidentWindowSeconds": 1800,
+    "minSources": 2,
+    "minSourceFamilies": 2,
+    "evidenceBondGen": "0.001",
+    "publisherBondGen": "0.05"
+  },
+  "coverage": {
+    "amountGen": "0.02",
+    "expectedPremiumGen": "0.001"
+  },
+  "incident": {
+    "title": "Historical advisory applicability check",
+    "advisoryHint": "Replace with the real advisory identifier"
+  },
+  "evidence": [
+    {
+      "sourceFamily": "NVD",
+      "sourceUrl": "https://nvd.nist.gov/vuln/detail/REPLACE_WITH_REAL_CVE",
+      "claimedFact": "The NVD record discusses the registered package and version. The historical publication predates this warranty."
+    },
+    {
+      "sourceFamily": "GITHUB_ADVISORY",
+      "sourceUrl": "https://github.com/advisories/REPLACE_WITH_MATCHING_REAL_GHSA",
+      "claimedFact": "The GitHub Advisory corroborates the same historical issue and affected version range."
+    }
+  ],
+  "expectedSafeOutcome": {
+    "evidence": "Both sources may become VERIFIED when the package, version, and official hosts genuinely match.",
+    "publicationInWindow": false,
+    "verdict": "NOT_AFFECTED or INCONCLUSIVE \u2014 attempted only after the evidence window closed with zero pending evaluations",
+    "payoutCreated": false,
+    "reason": "Historical disclosures predate the newly opened warranty. A live BREACHED result must never be manufactured for a test."
+  },
+  "adversarialSamples": [
+    {
+      "action": "adjudicate_incident while the evidence window is still open",
+      "expected": "REJECTED \u2014 adjudication opens only after the evidence window closes"
+    },
+    {
+      "action": "expire_incident while any evaluation is pending, even after the old 30-minute grace boundary",
+      "expected": "REJECTED \u2014 pending evidence must be resolved individually before expiry"
+    },
+    {
+      "action": "wait 5 minutes for a PENDING_SOURCE examination that never reports, then call expire_stalled_evidence",
+      "expected": "ACCEPTED \u2014 the item becomes STALLED_SOURCE, its bond is refunded to the submitter, capacity is released, and pending_evidence decrements; only then can expire_incident proceed"
+    },
+    {
+      "action": "reveal_evidence declaring NVD with a lookalike host",
+      "exampleUrl": "https://nvd-nist-gov.attacker.example/vuln/detail/CVE-2099-0001",
+      "expected": "REJECTED \u2014 NVD evidence must be published on an official NVD host"
+    },
+    {
+      "action": "resubmit the consumed source through query/fragment/www/case/slash/percent URL variants",
+      "exampleUrl": "https://WWW.NVD.NIST.GOV:443/vuln//detail/./CVE%2d2099%2d0001/?utm=replay#summary",
+      "expected": "REJECTED \u2014 canonical source already used for this warranty"
+    },
+    {
+      "action": "submit a genuinely different URL that validators identify as the same advisory in the same family",
+      "expected": "terminal as DUPLICATE_SOURCE \u2014 never counts as verified evidence; a new advisory is required"
+    },
+    {
+      "action": "adjudicate again over the identical evidence set after INCONCLUSIVE",
+      "expected": "REJECTED \u2014 add new verified evidence before requesting another adjudication"
+    },
+    {
+      "action": "withdraw, then if the transfer dispatch never reports, reconcile after 15 minutes",
+      "expected": "value returns to withdrawable credit; accounting stays balanced"
+    }
+  ]
+}

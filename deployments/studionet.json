@@ -1,0 +1,41 @@
+{
+  "network": "GenLayer Studionet",
+  "chainId": 61999,
+  "rpc": "https://studio.genlayer.com/api",
+  "explorer": "https://explorer-studio.genlayer.com",
+  "contract": {
+    "name": "SentinelPact",
+    "file": "contracts/sentinelpact.py",
+    "version": "2.1.0-studionet"
+  },
+  "deployment": {
+    "address": "0xD61eFb765F260F4D191C359D7a7413fcb59162Bf",
+    "transaction": "",
+    "explorerUrl": "https://explorer-studio.genlayer.com/address/0xD61eFb765F260F4D191C359D7a7413fcb59162Bf",
+    "deployedAt": "",
+    "deployer": "",
+    "status": "live \u2014 identity and hardened lifecycle rules verified via read-only get_stats() plus canonicalization and host-authentication probes"
+  },
+  "verification": {
+    "method": "read-only LATEST_FINAL get_stats + finalized deployment compiler/execution",
+    "verifiedFields": [
+      "product = SentinelPact",
+      "version = 2.1.0-studionet",
+      "network = Studionet",
+      "chain_id = 61999",
+      "admin_controls = false",
+      "accounting_balanced = true",
+      "expiry_requires_zero_pending = true",
+      "pending_evidence_timeout_seconds = 300",
+      "source_replay_protection = CANONICAL_URL_PLUS_FAMILY_ADVISORY_FINGERPRINT",
+      "withdrawal_timeout_seconds = 900"
+    ],
+    "targetedTests": "tests/direct/test_sentinelpact_adversarial.py",
+    "lifecycleEvidence": "docs/evidence/LIFECYCLE_EVIDENCE.json"
+  },
+  "frontend": {
+    "envVar": "NEXT_PUBLIC_SENTINELPACT_CONTRACT",
+    "defaultAddressSource": "src/lib/genlayer/client.ts",
+    "note": "The application falls back to the canonical address when the environment variable is unset. To re-point, update the environment value and rebuild."
+  }
+}
